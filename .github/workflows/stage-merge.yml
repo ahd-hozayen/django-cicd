@@ -1,7 +1,8 @@
 name: Auto-Merging
 on:
   workflow_run:
-    workflows: CI-build
+    workflows: 
+      - CI-build
     types: 
       - completed
     branches:
