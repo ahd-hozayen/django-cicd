@@ -6,12 +6,23 @@ on:
     types: 
       - completed
 jobs:
-  merge-branch:
+  sync-branch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
       - name: Merge development -> staging
         uses: devmasx/merge-branch@master
         with:
-          target_branch: stage
-          message: Merge development into stage
+          type: now
+          from_branch: development
+          target_branch: staging
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Merge staging -> uat
+      #   uses: devmasx/merge-branch@master
+      #   with:
+      #     type: now
+      #     from_branch: staging
+      #     target_branch: uat
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
