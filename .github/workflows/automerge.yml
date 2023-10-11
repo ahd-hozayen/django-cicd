@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Merge development -> staging
-        uses: devmasx/merge-branch@development
+        uses: devmasx/merge-branch@main
         with:
           type: now
           target_branch: stage
