@@ -6,12 +6,11 @@ on:
       - completed
     branches:
       - development
-
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Merge development -> staging
         uses: devmasx/merge-branch@master
         with:
