@@ -2,7 +2,7 @@ name: Auto-Merging
 on:
   workflow_run:
     workflows: 
-      - CI-build123
+      - CI-build
     types: 
       - completed
 jobs:
@@ -14,15 +14,7 @@ jobs:
       - name: Merge development -> staging
         uses: devmasx/merge-branch@master
         with:
-          # type: now
+          type: now
           from_branch: development
-          target_branch: staging
+          target_branch: stage
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Merge staging -> uat
-      #   uses: devmasx/merge-branch@master
-      #   with:
-      #     type: now
-      #     from_branch: staging
-      #     target_branch: uat
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
