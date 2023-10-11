@@ -33,7 +33,7 @@ jobs:
       - name: Merge development -> staging
         uses: devmasx/merge-branch@master
         with:
-          type: now
+          # type: now
           target_branch: stage
           message: Merge development into stage
           github_token: '${{ secrets.GITHUB_TOKEN }}'
