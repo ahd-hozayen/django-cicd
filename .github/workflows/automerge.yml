@@ -1,0 +1,17 @@
+name: Auto Merging
+on:
+  workflow_run:
+    workflows: ["CI build"]
+    types:
+      - completed
+
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Merge development -> staging
+        uses: devmasx/merge-branch@master
+        with:
+          target_branch: stage
+          message: Merge development into stage

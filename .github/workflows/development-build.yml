@@ -1,4 +1,4 @@
-name: Project CI & merging to Staging
+name: CI build
 on:
   push:
     branches: development
@@ -26,14 +26,5 @@ jobs:
         env:
           DJANGO_SETTINGS_MODULE: arkleap.settings
         run: pytest
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Merge development -> staging
-        uses: devmasx/merge-branch@master
-        with:
-          # type: now
-          target_branch: stage
-          message: Merge development into stage
-          github_token: '${{ secrets.GITHUB_TOKEN }}'
+
+  
