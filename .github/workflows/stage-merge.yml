@@ -2,7 +2,7 @@ name: Auto-Merging
 on:
   workflow_run:
     workflows: 
-      - CI-build123
+      - CI-build
     types: 
       - completed
 jobs:
