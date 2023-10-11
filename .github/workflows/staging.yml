@@ -29,7 +29,7 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@master
       - name: Merge development -> staging
         uses: devmasx/merge-branch@master
         with:
